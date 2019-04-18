@@ -3,7 +3,7 @@ import Header from './Header.js';
 import Footer from './Footer.js';
 import Dashboard from './Dashboard.js';
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import Form7 from './forms/Form7.js';
+import Form7 from './forms/form7/Form7.js';
 import Form2 from './forms/Form2.js';
 import MyDocuments from './forms/MyDocuments.js';
 import Notifications from './notifications.js';
