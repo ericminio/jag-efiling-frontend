@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../Form.css';
 import './Form7.css';
 import Confirm from './Confirm'
+import Search from './Search'
 
 class Form7 extends Component {
 
@@ -40,12 +41,13 @@ class Form7 extends Component {
             </div>
 
             <div className="form-title">
-                <h1>Notice of Appeal Access</h1>
+                <h1>Notice of Appeal </h1>
+                <label>Form 7 - Rule 11 (A)</label>
             </div>
 
             <Confirm />
+            <Search />
 
-            
 
         </div>
 
