@@ -3,12 +3,19 @@ import '../Form.css';
 import './Form7.css';
 import Confirm from './Confirm'
 import Search from './Search'
+import Access from './Access'
+import Form from './Form'
 
 class Form7 extends Component {
 
     constructor(props) {
         super(props);
         this.homePath = (process.env.PUBLIC_URL === "") ? '/' : process.env.PUBLIC_URL;
+        this.state = {
+            data: {
+                fileNumber: 'titi'
+            }
+        }
       }
 
   render() {
@@ -46,9 +53,9 @@ class Form7 extends Component {
             </div>
 
             <Confirm />
-            <Search />
-
-
+            <Search data={ this.state.data } />
+            <Access />
+            <Form data={ this.state.data } />
         </div>
 
 

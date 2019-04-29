@@ -7,6 +7,7 @@ class Search extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
+            data:props.data,
             levelOfCourtOptions: [
                 {value:"S",label:"Supreme Court of BC"}
             ],
@@ -14,6 +15,13 @@ class Search extends React.Component {
                 {value:"v",label:"Victoria Law Court"}
             ],
         }
+        this.notify = this.notify.bind(this)
+    }
+
+    notify(event) {
+        this.setState({
+            data: { fileNumber:event.target.value }
+        })
     }
 
     render() {
@@ -28,14 +36,16 @@ class Search extends React.Component {
                         <label className="control-label">Level of Court</label>
                         <MyInput type="select" name="lowerCourtLevelCd"
                             selectOptions={this.state.levelOfCourtOptions} isPrefilled={false}
-                            labelField="lowerCourtLevelName" disabled={true} />
+                            labelField="lowerCourtLevelName" disabled={true}/>
                     </div>
                 </div>
                 <div className="col-xs-6 col-sm-3">
-                    <div className="form-group">
-                        <label className="control-label">Supreme Court File No.</label>
-                        <MyInput id="court-file-no" type="text" maxLength={25} name="lowerCourtFileNo" isPrefilled={false}
-                            isValid={true} />
+                    <div >
+                        <label >Supreme Court File No.</label>
+                        <input id="court-file-no" type="text"
+                            name="lowerCourtFileNo"
+                            onChange={ this.notify }
+                            value = { this.state.data.fileNumber } />
                     </div>
                 </div>
                 <div className="col-xs-6 col-sm-3">

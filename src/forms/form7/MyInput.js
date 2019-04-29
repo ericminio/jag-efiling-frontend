@@ -6,7 +6,7 @@ class MyInput extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = this.getInitialState();
+        this.state = this.getInitialState()
     }
 
 
@@ -69,7 +69,18 @@ class MyInput extends React.Component {
                 );
         };
 
-        if (this.props.type === 'select') {
+        if (this.props.type == 'textarea') {
+            return (
+                <textarea
+                    className={inputClass}
+                    name={this.props.name}
+                    value={value}
+                    style={this.props.style}
+                    onChange={this._onChange}
+                    rows={this.props.rows}
+                    placeholder={this.props.placeholder} />
+                );
+        } else if (this.props.type === 'select') {
             return (
                 <select className={inputClass}
                     name={this.props.name}
@@ -95,14 +106,9 @@ class MyInput extends React.Component {
         } else {
             return (
                 <input type="text"
-                    className={inputClass}
                     name={this.props.name}
                     value={value}
-                    style={this.props.style}
-                    onChange={this._onChange}
-                    maxLength={this.props.maxLength}
-                    disabled={disabled}
-                    placeholder={this.props.placeholder}
+                    onChange={ (event)=>{ console.log(event.target.value); } }
                     id={this.props.id} />
                 );
         }

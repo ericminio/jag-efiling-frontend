@@ -43,7 +43,7 @@ class SearchResults extends React.Component {
                 <td>{order.honorificTitle + " " + order.judgeSurname}</td>
                 <td>{judgementDay.format('MMM D, YYYY')}</td>
                 <td>{deadline.format('MMM D, YYYY h:mm A')}</td>
-                <td><a href="#" >Appeal this Order</a></td>
+                <td><a href="#" id={'appeal-this-order-'+(index+1)}>Appeal this Order</a></td>
             </tr>
         );
     }
@@ -55,7 +55,7 @@ class SearchResults extends React.Component {
         var orders = result.orders;
 
         return (
-            <table key={index} hover>
+            <table key={index} >
                 <thead>
                     <tr>
                         <th>Name of Judge</th>
