@@ -5,6 +5,7 @@ import Dashboard from './Dashboard.js';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Form7 from './forms/Form7.js';
 import Form2 from './forms/Form2.js';
+import Form14 from './forms/Form14.js';
 import MyDocuments from './forms/MyDocuments.js';
 import Notifications from './notifications.js';
 
@@ -23,6 +24,7 @@ class App extends Component {
           <Route exact path={this.homePath} render={()=><Dashboard fetch={this.props.fetch}/>} />
           <Route path={process.env.PUBLIC_URL + '/form.7.html'} component={Form7} />
           <Route path={process.env.PUBLIC_URL + '/form.2.html'} component={Form2} />
+          <Route path={process.env.PUBLIC_URL + '/form.14.html'} component={Form14} />
           <Route path={process.env.PUBLIC_URL + '/my-documents.html'} render={()=><MyDocuments fetch={this.props.fetch}/>} />
           <Route path={process.env.PUBLIC_URL + '/notifications.html'} component={Notifications} />
           <Footer />

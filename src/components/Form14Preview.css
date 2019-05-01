@@ -1,0 +1,12 @@
+#form14-preview {
+    background-color: white;
+    margin-bottom: 15px;
+    border: 1px solid white;
+    border-radius: 5px;
+    font-family: Myriad-Pro, sans-serif;
+    font-size: medium;
+}
+
+#form14-preview td {
+    padding: 5px;
+}
